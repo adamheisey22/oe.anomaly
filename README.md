@@ -14,14 +14,14 @@ Formula Reference: https://rpubs.com/lefkios_paikousis/smr
 
 **Output: Dataframe with additional columns**
 
-1. ```OE_RATIO``` : Dictionary output {sentence : score} for each sentence in comment/text
-2. ```OE_IND``` : Number of sentences in comment/text
-3. ```LCL_NO``` : Sum of the individual sentence -- composite score
-4. ```UCL_NO``` : Normalizes column of sum_scores to be between -1 and 1. Values range from most negative (-1) to most postive (1)
-5. ```CENTER_NO``` : Lables "Positive" and "Negative" comments based on the overall_score. Scores greater than/equal to ZERO are "Positive" 
-6. ```VIOL_IND``` : Indicator column 1 or 0 based on overall_sentiment. 1-positive, 0-Negative
-7. ```VIOL_DSC``` : List of text tokens filtered for stopwords
-8. ```CENTER_METHOD``` : Identifies statistical anomalies. "Out of Control" or "In Control"
+1. ```OE_RATIO``` : Outputs the Observed to Expected ratio
+2. ```OE_IND``` : If the O/E ratio is greater than the target target value then 1 otherwise 0
+3. ```LCL_NO``` : Lower control Limit
+4. ```UCL_NO``` : Upper control limit
+5. ```CENTER_NO``` : Target value -- default value is 1 without specified targets. 
+6. ```VIOL_IND``` : Indicator equal to 1 for values beyond the control limits and 0 otherwise
+7. ```VIOL_DSC``` : "Yes" to identify values beyond the control limits, "No" otherwise
+8. ```CENTER_METHOD``` : Identifies the center method. "Center" if target is 1, "Target" if comparing to specified targets.
 
 **USAGE**
 
@@ -40,3 +40,4 @@ df_test <- data.frame(GROUP, NUMERATOR_NO, DENOMINATOR_NO, TARGET_NO )
 **Citiations**
 Formula Reference: https://rpubs.com/lefkios_paikousis/smr
 
+For questions reach out to **Adam Heisey** at ```admrussel@gmail.com```
