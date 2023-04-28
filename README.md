@@ -19,7 +19,7 @@ Formula Reference: https://rpubs.com/lefkios_paikousis/smr
 3. ```LCL_NO``` : Sum of the individual sentence -- composite score
 4. ```UCL_NO``` : Normalizes column of sum_scores to be between -1 and 1. Values range from most negative (-1) to most postive (1)
 5. ```CENTER_NO``` : Lables "Positive" and "Negative" comments based on the overall_score. Scores greater than/equal to ZERO are "Positive" 
-6. ```VIOL_IND`` : Indicator column 1 or 0 based on overall_sentiment. 1-positive, 0-Negative
+6. ```VIOL_IND``` : Indicator column 1 or 0 based on overall_sentiment. 1-positive, 0-Negative
 7. ```VIOL_DSC``` : List of text tokens filtered for stopwords
 8. ```CENTER_METHOD``` : Identifies statistical anomalies. "Out of Control" or "In Control"
 
