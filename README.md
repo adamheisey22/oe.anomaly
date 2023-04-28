@@ -25,12 +25,12 @@ Formula Reference: https://rpubs.com/lefkios_paikousis/smr
 
 **USAGE**
 
-GROUP <- c("A", "B", "C", "D", "E", "F")
-NUMERATOR_NO <- c(2, 6, 10, 2, 5, 0)
-DENOMINATOR_NO <- c(3, 3.3, 2, 0.5, 8, 10)
-TARGET_NO <- c(0.8, 0.5, 0.8, 0.8, 0.7, NA)
+GROUP <- c("A", "B", "C", "D", "E", "F")  
+NUMERATOR_NO <- c(2, 6, 10, 2, 5, 0)  
+DENOMINATOR_NO <- c(3, 3.3, 2, 0.5, 8, 10)  
+TARGET_NO <- c(0.8, 0.5, 0.8, 0.8, 0.7, NA)  
  
-df_test <- data.frame(GROUP, NUMERATOR_NO, DENOMINATOR_NO, TARGET_NO )
+df_test <- data.frame(GROUP, NUMERATOR_NO, DENOMINATOR_NO, TARGET_NO )  
 
   ```df_out <- oe_anomaly(df_test, "NUMERATOR_NO", "DENOMINATOR_NO", "TARGET_NO" )```
 
