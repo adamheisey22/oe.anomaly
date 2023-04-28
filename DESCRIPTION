@@ -1,0 +1,16 @@
+Package: oe.anomaly
+Title: Observed to Expected Ratio (O/E) Anomaly Detection
+Version: 0.0.0.9000
+Authors@R: 
+    person("Adam", "Heisey", , "admrussel@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Statistical significance and confidence intervals for an Observed to Expected Ratio Vandenbroucke (1982) method.
+License: GPL
+Imports: dplyr
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.0
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
