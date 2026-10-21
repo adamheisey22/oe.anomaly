@@ -58,7 +58,7 @@ oe_anomaly <- function(df, obs_column, exp_column, target_column) {
   df_out <- df %>%
     dplyr:: mutate(OE_RATIO = o/e,
                   OE_IND = ifelse(OE_RATIO > target, 1, 0),
-                  LCL_NO = (sqrt(o) - (z * 0.5))^(2) / e,
+                  LCL_NO = ifelse(sqrt(o) < (z * 0.5), 0, (sqrt(o) - (z * 0.5))^(2) / e),
                   UCL_NO = (sqrt(o) + (z * 0.5))^(2) / e,
                   CENTER_NO = target,
                   VIOL_IND = ifelse(UCL_NO > target & LCL_NO > target | UCL_NO < target & LCL_NO < target, 1, 0),
