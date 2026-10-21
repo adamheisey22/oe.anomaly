@@ -8,7 +8,7 @@ def oe_anomaly(df, obs_column, exp_column, target_column=None):
         df['TARGET_NO'] = 1
         target = df['TARGET_NO']
     else:
-        df[target_column].fillna(1, inplace=True)
+        df[target_column] = df[target_column].fillna(1)
         target = df[target_column]
     
     o = df[obs_column]
@@ -17,7 +17,7 @@ def oe_anomaly(df, obs_column, exp_column, target_column=None):
     N_ = 1 - ((1 - conf_level) / 2)
     z = norm.ppf(N_, loc=0, scale=1)
 
-    LCL_NO = ((np.sqrt(o)) - (z * 0.5))**2 / e
+    LCL_NO = np.where(np.sqrt(o) < (z * 0.5), 0, ((np.sqrt(o)) - (z * 0.5))**2 / e)
     UCL_NO = ((np.sqrt(o)) + (z * 0.5))**2 / e
     VIOL_IND = np.where((UCL_NO > target) & (LCL_NO > target) | (UCL_NO < target) & (LCL_NO < target), 1, 0)
     CENTER_NO=target
