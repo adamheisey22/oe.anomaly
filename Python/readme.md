@@ -35,5 +35,3 @@ Use You can use the **OE_anomaly_notebook** in **Jupyter Notebook** to run and t
 
 **Author**
 Formula Reference: https://rpubs.com/lefkios_paikousis/smr
-
-For questions reach out to **Adam Heisey** at ```admrussel@gmail.com```
